@@ -1,9 +1,3 @@
-//
-//  AppDelegate.swift
-//  CountriesListingApp
-//
-//  Created by lpalle on 8/17/22.
-//
 
 import UIKit
 
