@@ -19,7 +19,7 @@ class CountryCell: UITableViewCell {
         return label
     }()
     
-    lazy var captialLabel: UILabel = {
+    lazy var capitalLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 14)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -37,22 +37,24 @@ class CountryCell: UITableViewCell {
     func configure(_ country: CountryViewModel) {
         titleLabel.text = country.name + ", " + country.region
         codeLabel.text = country.code
-        captialLabel.text = country.capital
+        capitalLabel.text = country.capital
         addSubview(titleLabel)
         addSubview(codeLabel)
-        addSubview(captialLabel)
+        addSubview(capitalLabel)
         
-        //
+        
+        ///TODO: Need to address the layout to fix the overlapping and alignment issues
+        
+        // title label
         titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 14).isActive = true
         titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16).isActive = true
         
-        //
+        // code label
         codeLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 14).isActive = true
         codeLabel.leadingAnchor.constraint(equalTo: titleLabel.trailingAnchor, constant: 20).isActive = true
         
-        //
-        
-        captialLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16).isActive = true
-        captialLabel.bottomAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 10).isActive = true
+        //capital label
+        capitalLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16).isActive = true
+        capitalLabel.bottomAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 10).isActive = true
     }
 }
