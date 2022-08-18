@@ -13,6 +13,14 @@ class CountryListViewModel {
             print(error)
         }
     }
+    
+    func getSearchResults(_ searchText: String) -> [CountryViewModel] {
+        if (searchText.isEmpty) {
+            return countries
+        } else {
+            return countries.filter({$0.name.lowercased().contains(searchText.lowercased())})
+        }
+    }
 }
 
 
